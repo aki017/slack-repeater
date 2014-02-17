@@ -12,7 +12,7 @@ def post(name, message, channel)
     token: ENV['SLACK_TOKEN'],
     channel: channel,
     text: message,
-    name: name
+    username: name
   }
 end
 
