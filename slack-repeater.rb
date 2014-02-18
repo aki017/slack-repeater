@@ -31,7 +31,7 @@ class SlackRepeater < Sinatra::Base
     message << "　- environment: #{environment}\n"
     message << "　- last occurence: #{error['last_occurred_at']}\n"
     message << "　- times occurred: #{error['times_occurred']}\n"
-    post "Airbrake[#{environment}]", message, ENV["SLACK_AIRBRAKE_CHANNEL_#{project['id']}"]
+    post "Airbrake [#{environment}]", message, ENV["SLACK_AIRBRAKE_CHANNEL_#{project['id']}"]
   end
 end
 
