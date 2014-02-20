@@ -56,7 +56,6 @@ class SlackRepeater < Sinatra::Base
     }
 
     post "Airbrake [#{environment}]", message, ENV["SLACK_AIRBRAKE_CHANNEL_#{project['id']}"], options
-
   end
 end
 
