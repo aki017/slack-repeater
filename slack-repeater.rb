@@ -35,7 +35,7 @@ class SlackRepeater < Sinatra::Base
       ["environment", environment, true],
       ["times occurred", error["times_occurred"], true],
       ["last occurence", error["last_occurred_at"], true],
-      ["request url", error["last_notice"]["request_url"], false],
+      ["request url", (error["last_notice"]["request_url"] rescue ""), false],
     ]
 
     attachments = [{
