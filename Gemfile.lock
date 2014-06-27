@@ -1,6 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     multipart-post (2.0.0)
@@ -17,5 +20,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   faraday
   sinatra
