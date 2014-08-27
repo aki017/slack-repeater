@@ -27,7 +27,10 @@ class SlackRepeater < Sinatra::Base
     project = error['project']
     environment = error['environment']
 
-    message = "<https://happyelements.airbrake.io/projects/#{project['id']}/groups/#{error['id']}|#{error['error_message']}>"
+    error_message = error['error_message']
+    error_message.gsub!(/</m, '&lt;')
+    error_message.gsub!(/>/m, '&gt;')
+    message = "<https://happyelements.airbrake.io/projects/#{project['id']}/groups/#{error['id']}|#{error_message}>"
 
     text = error['error_message']
     fields = [
