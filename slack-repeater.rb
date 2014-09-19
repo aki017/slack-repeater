@@ -56,7 +56,7 @@ class SlackRepeater < Sinatra::Base
     options = {
       attachments: attachments.to_json,
       icon_emoji: ":scream:",
-      unfurl_links: true,
+      unfurl_links: 1,
     }
 
     post "Airbrake [#{environment}]", message, ENV["SLACK_AIRBRAKE_CHANNEL_#{project['id']}"], options
